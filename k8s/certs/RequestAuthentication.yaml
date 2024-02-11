@@ -1,0 +1,15 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "RequestAuthentication"
+metadata:
+  name: "jwt-example"
+  namespace: foo
+spec:
+  selector:
+    matchLabels:
+      istio: ingressgateway
+  jwtRules:
+  - issuer: "ISSUER"
+    jwks: |
+      { "keys":[{"e": "AQAB","kty": "RSA",
+      "n":"yZ6sVDQ4V3UolwK12PYUyPJRLD8iI369dMMz6ZTaUh3roHNQLmriRiJILFhm_7kBpnbY2sQi7hiu-R3kgVWUnig5LvNek_bbPck3WE3A8ZCTG8K35IvjPQVQFtKtLFW0FjlZn3c7EhMkWGarQd9A83Ajgn9utP3NsTJLwJrdz0M6TiCq7QdHi38Kar3OVKIE6O9KfWEu1JdzqQV-DKQHRAUmJX512xBFt1MkuKv6wwJrhs3C1kx4fy8C25CedcdO_ILudwvBJPNCc58ilSQkCtPrWbP09krRfkh1ytH_Qy_szHsyrpBOb3MmdqZgDVvlTxeOb1OaPrV1U6noO-8fpQ"}]}
+
